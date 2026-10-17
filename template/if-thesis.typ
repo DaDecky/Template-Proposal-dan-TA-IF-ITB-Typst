@@ -37,7 +37,7 @@
   set par(
     justify: true,
     leading: 1.25em,
-    first-line-indent: 1.25cm,
+    first-line-indent: (amount: 1.25cm, all: true),
   )
 
   // --- 3. Format Penomoran Gambar, Tabel, dan Persamaan ---
@@ -56,10 +56,11 @@
     }
   })
 
-  show heading.where(level: 1): it => [
-    #pagebreak(weak: true)
-    #v(1cm)
-    #align(center)[
+  show heading.where(level: 1): it => {
+    pagebreak(weak: true)
+    v(1cm)
+    align(center)[
+      #set par(first-line-indent: 0pt)
       #text(size: 14pt, weight: "bold")[
         #if it.numbering != none {
           counter(heading).display(it.numbering)
@@ -68,11 +69,11 @@
         #upper(it.body)
       ]
     ]
-    #v(1.5em)
-  ]
+    v(1.5em)
+  }
 
-  show heading.where(level: 2): it => [
-    #v(1.2em)
+  show heading.where(level: 2): it => block(width: 100%, breakable: false, above: 1.5em, below: 1em)[
+    #set par(first-line-indent: 0pt)
     #text(size: 12pt, weight: "bold")[
       #if it.numbering != none {
         counter(heading).display(it.numbering)
@@ -80,11 +81,10 @@
       }
       #it.body
     ]
-    #v(0.6em)
   ]
 
-  show heading.where(level: 3): it => [
-    #v(1em)
+  show heading.where(level: 3): it => block(width: 100%, breakable: false, above: 1.2em, below: 0.8em)[
+    #set par(first-line-indent: 0pt)
     #text(size: 12pt, weight: "bold")[
       #if it.numbering != none {
         counter(heading).display(it.numbering)
@@ -92,7 +92,6 @@
       }
       #it.body
     ]
-    #v(0.5em)
   ]
 
   // ==========================================
