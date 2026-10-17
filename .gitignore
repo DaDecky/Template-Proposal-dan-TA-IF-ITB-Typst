@@ -2,3 +2,4 @@
 latex-export/
 *.log
 .DS_Store
+chapters/*.pdf
