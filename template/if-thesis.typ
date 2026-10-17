@@ -4,6 +4,58 @@
 // Institut Teknologi Bandung (ITB)
 // ==============================================================================
 
+#let appendix(body) = {
+  counter(heading).update(0)
+  set heading(numbering: (..nums) => {
+    let list = nums.pos()
+    if list.len() == 1 {
+      "LAMPIRAN " + numbering("A", ..nums)
+    } else {
+      numbering("A.1", ..list)
+    }
+  })
+
+  show heading.where(level: 1): it => {
+    pagebreak(weak: true)
+    v(1cm)
+    align(center)[
+      #set par(first-line-indent: 0pt)
+      #text(size: 14pt, weight: "bold")[
+        #if it.numbering != none {
+          counter(heading).display(it.numbering)
+          [\ ]
+        }
+        #upper(it.body)
+      ]
+    ]
+    v(1.5em)
+  }
+
+  show heading.where(level: 2): it => block(width: 100%, breakable: false, above: 1.5em, below: 1em)[
+    #set par(first-line-indent: 0pt)
+    #text(size: 12pt, weight: "bold")[
+      #if it.numbering != none {
+        counter(heading).display(it.numbering)
+        [ ]
+      }
+      #it.body
+    ]
+  ]
+
+  show heading.where(level: 3): it => block(width: 100%, breakable: false, above: 1.2em, below: 0.8em)[
+    #set par(first-line-indent: 0pt)
+    #text(size: 12pt, weight: "bold")[
+      #if it.numbering != none {
+        counter(heading).display(it.numbering)
+        [ ]
+      }
+      #it.body
+    ]
+  ]
+
+  body
+}
+
 #let if-thesis(
   title: "<JUDUL TUGAS AKHIR>",
   title-en: "<ENGLISH THESIS TITLE>",
@@ -20,6 +72,7 @@
   abstract-en: none,
   keywords-en: (),
   preface: none,
+  glossary: none,
   body
 ) = {
   // --- 1. Pengaturan Kertas & Batas Margin (Standar ITB: Kiri 4cm, Atas 3cm, Kanan 3cm, Bawah 3cm) ---
@@ -306,6 +359,16 @@
 
   pagebreak()
   outline(title: [DAFTAR TABEL], target: figure.where(kind: table))
+
+  // --- DAFTAR SINGKATAN DAN ISTILAH ---
+  if glossary != none [
+    #pagebreak()
+    #align(center)[
+      #text(size: 14pt, weight: "bold")[DAFTAR SINGKATAN DAN ISTILAH]
+    ]
+    #v(1.5em)
+    #glossary
+  ]
 
   // ==========================================
   // BAGIAN UTAMA (BAB I - BAB V): Angka Arab 1, 2, ...

@@ -1,4 +1,4 @@
-#import "template/if-thesis.typ": if-thesis
+#import "template/if-thesis.typ": if-thesis, appendix
 
 #show: if-thesis.with(
   title: "<JUDUL TUGAS AKHIR>",
@@ -25,6 +25,21 @@
     + Para dosen dan staf pengajar Program Studi Sarjana Teknik Informatika STEI ITB.
     + Rekan-rekan mahasiswa dan seluruh pihak yang telah mendukung pelaksanaan tugas akhir ini.
   ],
+  glossary: [
+    #figure(
+      table(
+        columns: (2.5cm, 1fr),
+        align: (left, left),
+        [Singkatan], [Keterangan],
+        [AI], [Artificial Intelligence (Kecerdasan Buatan)],
+        [API], [Application Programming Interface],
+        [ITB], [Institut Teknologi Bandung],
+        [STEI], [Sekolah Teknik Elektro dan Informatika],
+        [TA], [Tugas Akhir],
+      ),
+      caption: [Daftar Singkatan yang Digunakan dalam Laporan],
+    )
+  ],
 )
 
 // ==========================================
@@ -36,3 +51,17 @@
 #include "chapters/03-analisis-perancangan.typ"
 #include "chapters/04-implementasi-evaluasi.typ"
 #include "chapters/05-kesimpulan-saran.typ"
+
+// ==========================================
+// DAFTAR PUSTAKA
+// ==========================================
+
+#pagebreak()
+#bibliography("references.bib", style: "apa", title: [DAFTAR PUSTAKA])
+
+// ==========================================
+// LAMPIRAN
+// ==========================================
+
+#show: appendix
+#include "chapters/99-lampiran.typ"
