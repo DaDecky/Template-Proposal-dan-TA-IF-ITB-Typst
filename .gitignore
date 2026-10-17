@@ -1,0 +1,4 @@
+# Build and export outputs
+latex-export/
+*.log
+.DS_Store
