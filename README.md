@@ -1,5 +1,15 @@
 # ITB Informatics Undergraduate Thesis (Tugas Akhir) Template in Typst
 
+> ⚠️ **DISCLAIMER / WORK IN PROGRESS (WIP)**  
+> Template ini masih dalam tahap **pengembangan aktif (Work in Progress)** dan merupakan proyek eksperimental independen untuk mahasiswa Teknik Informatika STEI ITB.  
+> 
+> Beberapa bagian tata letak, fungsi penomoran, atau alur ekspor ke LaTeX mungkin masih memiliki kekurangan atau sewaktu-waktu mengalami *breaking change*. Selalu periksa kembali dokumen hasil kompilasi PDF dengan pedoman penulisan resmi program studi.  
+> 
+> 💡 **Feel Free to Contribute!**  
+> Jika Anda menemukan bug, anomali formatting, atau memiliki ide perbaikan (tata letak, sitasi, maupun skrip ekspor), silakan buat **Pull Request (PR)** atau buka **Issue**. Kontribusi dari teman-teman mahasiswa dan alumni sangat diapresiasi!
+
+---
+
 Template Typst untuk penyusunan **Laporan Tugas Akhir (TA) Program Studi Sarjana Teknik Informatika**, Sekolah Teknik Elektro dan Informatika (STEI), Institut Teknologi Bandung (ITB).
 
 Template ini dirancang agar:
