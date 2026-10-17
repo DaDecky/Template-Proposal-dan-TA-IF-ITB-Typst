@@ -73,6 +73,7 @@
   keywords-en: (),
   preface: none,
   glossary: none,
+  font: "Liberation Serif",
   body
 ) = {
   // --- 1. Pengaturan Kertas & Batas Margin (Standar ITB: Kiri 4cm, Atas 3cm, Kanan 3cm, Bawah 3cm) ---
@@ -81,9 +82,9 @@
     margin: (left: 4cm, top: 3cm, right: 3cm, bottom: 3cm),
   )
 
-  // --- 2. Tipografi (Times New Roman / Liberation Serif 12pt, Spasi 1.5, Justified) ---
+  // --- 2. Tipografi (Times-equivalent 12pt, Spasi 1.5, Justified) ---
   set text(
-    font: ("Times New Roman", "Liberation Serif"),
+    font: font,
     size: 12pt,
     lang: "id",
   )
