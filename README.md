@@ -17,7 +17,7 @@ Template ini dirancang agar:
 2. **Sesuai Pedoman TA IF ITB**:
    - Margin format 4-3-3-3 (Kiri 4 cm, Atas 3 cm, Kanan 3 cm, Bawah 3 cm).
    - Tipografi Times New Roman 12 pt, spasi 1.5 baris, perataan rata kanan-kiri (*justified*).
-   - Format penomoran judul bab baku: `BAB I: PENDAHULUAN`, subbab `1.1`, subsubbab `1.1.1`.
+   - Format penomoran judul bab baku: `BAB I: PENDAHULUAN`, subbab `I.1`, subsubbab `I.1.1`.
    - Lambang Ganesha ITB tepat 3.5 cm pada sampul luar.
    - Halaman depan (Abstrak, Kata Pengantar, Daftar Isi, Daftar Gambar, Daftar Tabel) bernomor Romawi kecil (`iii` dst.), bagian bab bernomor Arab (`1`, `2`, dst.).
    - Struktur 5 bab baku IF ITB:
@@ -26,7 +26,7 @@ Template ini dirancang agar:
      * BAB III: Analisis dan Perancangan Solusi.
      * BAB IV: Implementasi dan Evaluasi.
      * BAB V: Kesimpulan dan Saran.
-3. **Konversi ke LaTeX Otomatis**: Mendukung ekspor otomatis bab-bab naskah ke format LaTeX (`.tex`) menggunakan skrip bawaan (`./export-to-latex.sh`).
+3. **[TODO / Eksperimental] Konversi ke LaTeX Otomatis**: Mendukung ekspor otomatis bab-bab naskah ke format LaTeX (`.tex`) menggunakan skrip bawaan (`./export-to-latex.sh`). Fitur ini masih dalam tahap penyempurnaan aktif (WIP).
 
 ---
 

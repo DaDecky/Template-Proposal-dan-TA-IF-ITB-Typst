@@ -53,6 +53,17 @@
     ]
   ]
 
+  show heading.where(level: 4): it => block(width: 100%, breakable: false, above: 1em, below: 0.6em)[
+    #set par(first-line-indent: 0pt)
+    #text(size: 12pt, weight: "bold")[
+      #if it.numbering != none {
+        counter(heading).display(it.numbering)
+        [ ]
+      }
+      #it.body
+    ]
+  ]
+
   body
 }
 
@@ -106,7 +117,7 @@
     if list.len() == 1 {
       "BAB " + numbering("I", ..nums)
     } else {
-      numbering("1.1", ..list)
+      numbering("I.1", ..list)
     }
   })
 
@@ -138,6 +149,17 @@
   ]
 
   show heading.where(level: 3): it => block(width: 100%, breakable: false, above: 1.2em, below: 0.8em)[
+    #set par(first-line-indent: 0pt)
+    #text(size: 12pt, weight: "bold")[
+      #if it.numbering != none {
+        counter(heading).display(it.numbering)
+        [ ]
+      }
+      #it.body
+    ]
+  ]
+
+  show heading.where(level: 4): it => block(width: 100%, breakable: false, above: 1em, below: 0.6em)[
     #set par(first-line-indent: 0pt)
     #text(size: 12pt, weight: "bold")[
       #if it.numbering != none {
