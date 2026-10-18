@@ -92,7 +92,9 @@ Buka berkas `main.typ`, lalu sesuaikan parameter pada blok berikut:
 
 ---
 
-## Ekspor ke Format LaTeX
+## Ekspor ke Format LaTeX (Eksperimental / WIP)
+
+> ⚠️ **Catatan / TODO**: Fitur ekspor otomatis ke LaTeX ini masih bersifat **eksperimental (Work in Progress)** dan terus disempurnakan. Hasil konversi mungkin memerlukan penyesuaian manual terutama pada macro khusus, tabel kompleks, atau pemformatan sitasi sebelum dikompilasi dengan pdflatex.
 
 Jika sewaktu-waktu naskah ingin dialihkan atau dimasukkan ke template LaTeX resmi ITB, jalankan:
 ```bash
