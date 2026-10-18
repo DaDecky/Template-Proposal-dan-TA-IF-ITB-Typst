@@ -87,8 +87,11 @@ Buka berkas `main.typ`, lalu sesuaikan parameter pada blok berikut:
   ```
   Setiap kali berkas `.typ` disimpan, berkas `main.pdf` akan langsung diperbarui.
 
-- **Di VSCode / Cursor**:
-  Pasang ekstensi **Tinymist Typst** (`myriad-dreamin.tinymist`). Dokumen akan otomatis di-export ke PDF setiap kali disimpan (`Ctrl + S`).
+- **Di VSCode / Cursor (Alur Menulis & Live Preview)**:
+  1. Pasang ekstensi **Tinymist Typst** (`myriad-dreamin.tinymist`).
+  2. Buka berkas `main.typ`, lalu buka live preview (klik ikon **Show Typst Preview** di pojok kanan atas editor).
+  3. Buka dan sunting berkas bab yang ingin dikerjakan di dalam folder `chapters/` (misalnya `01-pendahuluan.typ`). Pratinjau di samping akan tetap terkunci (*pinned*) menampilkan naskah laporan utuh secara *live*.
+  4. Setiap kali berkas disimpan (`Ctrl + S`), berkas `main.pdf` akan otomatis diekspor dan diperbarui.
 
 ---
 
