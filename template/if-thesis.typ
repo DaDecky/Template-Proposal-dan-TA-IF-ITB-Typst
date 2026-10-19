@@ -125,7 +125,7 @@
     pagebreak(weak: true)
     v(1cm)
     align(center)[
-      #set par(first-line-indent: 0pt)
+      #set par(first-line-indent: 0pt, justify: false)
       #text(size: 14pt, weight: "bold")[
         #if it.numbering != none {
           counter(heading).display(it.numbering)
@@ -138,7 +138,7 @@
   }
 
   show heading.where(level: 2): it => block(width: 100%, breakable: false, above: 1.5em, below: 1em)[
-    #set par(first-line-indent: 0pt)
+    #set par(first-line-indent: 0pt, justify: false)
     #text(size: 12pt, weight: "bold")[
       #if it.numbering != none {
         counter(heading).display(it.numbering)
@@ -149,7 +149,7 @@
   ]
 
   show heading.where(level: 3): it => block(width: 100%, breakable: false, above: 1.2em, below: 0.8em)[
-    #set par(first-line-indent: 0pt)
+    #set par(first-line-indent: 0pt, justify: false)
     #text(size: 12pt, weight: "bold")[
       #if it.numbering != none {
         counter(heading).display(it.numbering)
@@ -160,7 +160,7 @@
   ]
 
   show heading.where(level: 4): it => block(width: 100%, breakable: false, above: 1em, below: 0.6em)[
-    #set par(first-line-indent: 0pt)
+    #set par(first-line-indent: 0pt, justify: false)
     #text(size: 12pt, weight: "bold")[
       #if it.numbering != none {
         counter(heading).display(it.numbering)
@@ -175,7 +175,7 @@
   // ==========================================
   [
     #set page(numbering: none)
-    #set par(first-line-indent: 0pt, leading: 0.9em)
+    #set par(first-line-indent: 0pt, leading: 0.9em, justify: false)
     #align(center + top)[
       #v(0.5cm)
       #text(size: 14pt, weight: "bold")[
@@ -220,7 +220,7 @@
   pagebreak()
   [
     #set page(numbering: none)
-    #set par(first-line-indent: 0pt, leading: 0.9em)
+    #set par(first-line-indent: 0pt, leading: 0.9em, justify: false)
     #align(center + top)[
       #v(0.5cm)
       #text(size: 14pt, weight: "bold")[
@@ -323,6 +323,7 @@
   if abstract-id != none [
     #pagebreak()
     #align(center)[
+      #set par(justify: false)
       #text(size: 14pt, weight: "bold")[ABSTRAK]
       #v(0.5em)
       #text(size: 12pt, weight: "bold")[#upper(title)]
@@ -345,6 +346,7 @@
   if abstract-en != none [
     #pagebreak()
     #align(center)[
+      #set par(justify: false)
       #text(size: 14pt, weight: "bold")[ABSTRACT]
       #v(0.5em)
       #text(size: 12pt, weight: "bold")[#upper(title-en)]
