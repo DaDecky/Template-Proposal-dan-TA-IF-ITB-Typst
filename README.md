@@ -14,10 +14,12 @@ Template Typst untuk penyusunan **Laporan Tugas Akhir (TA) Program Studi Sarjana
 
 Template ini dirancang agar:
 1. **Performa Tinggi**: Menggunakan engine Typst (berbasis Rust) dengan kompilasi cepat (~10-30 ms pada live reload) dan sintaks bersih.
-2. **Sesuai Pedoman TA IF ITB**:
+2. **Sesuai Pedoman Resmi TA IF ITB**: Mengacu langsung pada berkas acuan resmi `reference/Pedoman Penulisan Laporan TA-2024.pdf`:
    - Margin format 4-3-3-3 (Kiri 4 cm, Atas 3 cm, Kanan 3 cm, Bawah 3 cm).
    - Tipografi Times New Roman 12 pt, spasi 1.5 baris, perataan rata kanan-kiri (*justified*).
-   - Format penomoran judul bab baku: `BAB I: PENDAHULUAN`, subbab `I.1`, subsubbab `I.1.1`.
+   - Format penomoran judul bab baku: `BAB I PENDAHULUAN`, subbab `I.1`, subsubbab `I.1.1`.
+   - Penomoran gambar, tabel, dan persamaan berbasis bab (`Gambar X.Y`, `Tabel X.Y`, `(X.Y)`) serta lampiran (`Gambar A.Y`, `Tabel A.Y`).
+   - Format Daftar Gambar dan Daftar Tabel rapi dengan perataan rata kiri dan *hanging indent*.
    - Lambang Ganesha ITB tepat 3.5 cm pada sampul luar.
    - Halaman depan (Abstrak, Kata Pengantar, Daftar Isi, Daftar Gambar, Daftar Tabel) bernomor Romawi kecil (`iii` dst.), bagian bab bernomor Arab (`1`, `2`, dst.).
    - Struktur 5 bab baku IF ITB:
@@ -47,6 +49,8 @@ Template ini dirancang agar:
 │   └── 05-kesimpulan-saran.typ
 ├── assets/
 │   └── logo-itb.jpg          # Lambang resmi Ganesha ITB (tinggi 3.5 cm)
+├── reference/
+│   └── Pedoman Penulisan Laporan TA-2024.pdf # Dokumen acuan resmi IF ITB
 └── .vscode/
     └── settings.json         # Konfigurasi auto-export PDF di VSCode (Tinymist)
 ```
