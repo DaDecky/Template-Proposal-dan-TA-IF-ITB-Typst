@@ -21,8 +21,8 @@ Metodologi menguraikan tahapan sistematis yang dilakukan selama pengerjaan tugas
 
 == Sistematika Pembahasan
 Sistematika pembahasan memberikan ringkasan singkat isi laporan per bab:
-- *BAB I Pendahuluan*: Menguraikan latar belakang, rumusan masalah, tujuan, batasan, metodologi, dan sistematika pembahasan.
-- *BAB II Studi Literatur*: Membahas teori dasar dan penelitian terkait.
-- *BAB III Analisis dan Perancangan Solusi*: Menguraikan analisis kebutuhan dan desain arsitektur solusi.
-- *BAB IV Implementasi dan Evaluasi*: Mendokumentasikan hasil pengujian dan analisis perbandingan.
-- *BAB V Kesimpulan dan Saran*: Menyimpulkan hasil ketercapaian tujuan dan saran pengembangan lanjutan.
+- Bab I Pendahuluan: Menguraikan latar belakang, rumusan masalah, tujuan, batasan, metodologi, dan sistematika pembahasan.
+- Bab II Studi Literatur: Membahas teori dasar dan penelitian terkait.
+- Bab III Analisis dan Perancangan Solusi: Menguraikan analisis kebutuhan dan desain arsitektur solusi.
+- Bab IV Implementasi dan Evaluasi: Mendokumentasikan hasil pengujian dan analisis perbandingan.
+- Bab V Kesimpulan dan Saran: Menyimpulkan hasil ketercapaian tujuan dan saran pengembangan lanjutan.

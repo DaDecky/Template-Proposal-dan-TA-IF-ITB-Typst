@@ -18,7 +18,7 @@ Dengan ini, saya:
 ]
 
 #v(0.6em)
-Menyatakan bahwa dalam pengerjaan dan penulisan Tugas Akhir ini, saya *menggunakan / tidak menggunakan* bantuan perangkat kecerdasan buatan (AI). Rincian penggunaan AI yang dilakukan adalah sebagai berikut:
+Menyatakan bahwa dalam pengerjaan dan penulisan Tugas Akhir ini, saya menggunakan / tidak menggunakan bantuan perangkat kecerdasan buatan (AI). Rincian penggunaan AI yang dilakukan adalah sebagai berikut:
 
 #v(0.4em)
 #figure(
