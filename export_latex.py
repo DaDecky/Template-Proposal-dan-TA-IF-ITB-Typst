@@ -17,9 +17,15 @@ def main():
     os.makedirs(os.path.join(export_dir, "assets"), exist_ok=True)
 
     # 1. Copy assets
-    logo_src = os.path.join(root_dir, "assets", "logo-itb.jpg")
-    if os.path.exists(logo_src):
-        shutil.copy2(logo_src, os.path.join(export_dir, "logo-itb.jpg"))
+    assets_src_dir = os.path.join(root_dir, "assets")
+    if os.path.exists(assets_src_dir):
+        for f in os.listdir(assets_src_dir):
+            src_f = os.path.join(assets_src_dir, f)
+            if os.path.isfile(src_f):
+                shutil.copy2(src_f, os.path.join(export_dir, "assets", f))
+                # also keep logo-itb at root of latex-export for backwards compatibility
+                if f == "logo-itb.jpg":
+                    shutil.copy2(src_f, os.path.join(export_dir, "logo-itb.jpg"))
 
     bib_src = os.path.join(root_dir, "references.bib")
     if os.path.exists(bib_src):

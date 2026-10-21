@@ -26,18 +26,15 @@
     + Rekan-rekan mahasiswa dan seluruh pihak yang telah mendukung pelaksanaan tugas akhir ini.
   ],
   glossary: [
-    #figure(
-      table(
-        columns: (2.5cm, 1fr),
-        align: (left, left),
-        [Singkatan], [Keterangan],
-        [AI], [Artificial Intelligence (Kecerdasan Buatan)],
-        [API], [Application Programming Interface],
-        [ITB], [Institut Teknologi Bandung],
-        [STEI], [Sekolah Teknik Elektro dan Informatika],
-        [TA], [Tugas Akhir],
-      ),
-      caption: [Daftar Singkatan yang Digunakan dalam Laporan],
+    #table(
+      columns: (2.5cm, 1fr),
+      align: (left, left),
+      table.header([*Singkatan*], [*Keterangan*]),
+      [AI], [Artificial Intelligence (Kecerdasan Buatan)],
+      [API], [Application Programming Interface],
+      [ITB], [Institut Teknologi Bandung],
+      [STEI], [Sekolah Teknik Elektro dan Informatika],
+      [TA], [Tugas Akhir],
     )
   ],
 )

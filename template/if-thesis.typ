@@ -4,8 +4,14 @@
 // Institut Teknologi Bandung (ITB)
 // ==============================================================================
 
+#let in-appendix = state("in-appendix", false)
+
 #let appendix(body) = {
+  in-appendix.update(true)
   counter(heading).update(0)
+  counter(figure.where(kind: image)).update(0)
+  counter(figure.where(kind: table)).update(0)
+  counter(math.equation).update(0)
   set heading(numbering: (..nums) => {
     let list = nums.pos()
     if list.len() == 1 {
@@ -16,6 +22,9 @@
   })
 
   show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(math.equation).update(0)
     pagebreak(weak: true)
     v(1cm)
     align(center)[
@@ -109,7 +118,51 @@
   show figure.where(kind: table): set figure.caption(position: top)
   show figure.where(kind: image): set figure(supplement: [Gambar])
   show figure.where(kind: table): set figure(supplement: [Tabel])
-  set math.equation(numbering: "(1.1)")
+  set math.equation(supplement: [Persamaan])
+
+  set figure(numbering: n => context {
+    let loc = here()
+    let is-app = in-appendix.at(loc)
+    let ch = counter(heading).get().first()
+    let ch-str = if is-app { numbering("A", ch) } else if ch > 0 { str(ch) } else { "" }
+    if ch-str != "" { [#ch-str.#n] } else { [#n] }
+  })
+
+  set math.equation(numbering: n => context {
+    let loc = here()
+    let is-app = in-appendix.at(loc)
+    let ch = counter(heading).get().first()
+    let ch-str = if is-app { numbering("A", ch) } else if ch > 0 { str(ch) } else { "" }
+    if ch-str != "" { [(#ch-str.#n)] } else { [(#n)] }
+  })
+
+  show outline: it => {
+    set par(first-line-indent: 0pt, justify: false, leading: 1em)
+    it
+  }
+
+  show outline.entry: it => context {
+    if it.element.func() == figure and (it.element.kind == image or it.element.kind == table) {
+      let fig = it.element
+      let loc = fig.location()
+      let is-app = in-appendix.at(loc)
+      let ch = counter(heading).at(loc).first()
+      let ch-str = if is-app { numbering("A", ch) } else if ch > 0 { str(ch) } else { "" }
+      let k = if fig.kind == image { "Gambar" } else { "Tabel" }
+      let n = counter(figure.where(kind: fig.kind)).at(loc).first()
+      let num = if ch-str != "" { ch-str + "." + str(n) } else { str(n) }
+      let label-text = k + " " + num
+
+      block(width: 100%, breakable: false, below: 0.8em)[
+        #set par(first-line-indent: 0pt, hanging-indent: 2.4cm, justify: false)
+        #link(loc)[#box(width: 2.4cm)[#label-text]#fig.caption.body]
+        #box(width: 1fr, it.fill)
+        #it.page()
+      ]
+    } else {
+      it
+    }
+  }
 
   // --- 4. Format Penomoran Bab & Subbab Teknik Informatika ITB ---
   set heading(numbering: (..nums) => {
@@ -122,6 +175,9 @@
   })
 
   show heading.where(level: 1): it => {
+    counter(figure.where(kind: image)).update(0)
+    counter(figure.where(kind: table)).update(0)
+    counter(math.equation).update(0)
     pagebreak(weak: true)
     v(1cm)
     align(center)[
