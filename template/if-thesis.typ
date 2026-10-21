@@ -141,6 +141,9 @@
     it
   }
 
+  show list: set par(first-line-indent: 0pt)
+  show enum: set par(first-line-indent: 0pt)
+
   show outline.entry: it => context {
     if it.element.func() == figure and (it.element.kind == image or it.element.kind == table) {
       let fig = it.element
